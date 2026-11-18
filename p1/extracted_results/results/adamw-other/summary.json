@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "step": 5000,
+  "tokens": 92160000,
+  "train_seconds": 1246.587208200508,
+  "checkpoint_seconds": 48.16070979597862,
+  "wall_seconds": 1314.67105867801,
+  "endpoint_scores": {
+    "loss": 4.010100245475769,
+    "perplexity": 55.15239906483962,
+    "bits_per_character": 5.785351737615507
+  },
+  "best_val_loss": 1.536895975470543,
+  "tokens_per_second": 73929.84573701519,
+  "peak_memory_bytes": 21773741056,
+  "budget": "tokens",
+  "output": "/home/user2/Desktop/project1_1118/ML_project1/p1/runs/adamw-other"
+}

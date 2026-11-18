@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "step": 5000,
+  "tokens": 92160000,
+  "train_seconds": 1503.4991875878768,
+  "checkpoint_seconds": 35.271724769932916,
+  "wall_seconds": 1558.959065817995,
+  "endpoint_scores": {
+    "loss": 1.580552116036415,
+    "perplexity": 4.857637050306337,
+    "bits_per_character": 2.2802546996722937
+  },
+  "best_val_loss": 1.5110261291265488,
+  "tokens_per_second": 61297.0068496385,
+  "peak_memory_bytes": 20565732352,
+  "budget": "tokens",
+  "output": "/home/user2/Desktop/project1_1118/ML_project1/p1/runs/muon-other"
+}
