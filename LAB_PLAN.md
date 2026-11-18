@@ -74,6 +74,26 @@ done
 python plot.py --runs-dir=runs && python export_results.py --runs-dir=runs --output=results01.zip
 ```
 
+### 一次执行第 4–5 节的命令
+
+六组训练都完成后，在已激活课程环境的 Ubuntu 终端中进入 `p1`，将下面的命令整段复制执行。它会依次绘制六组单独图、用 AdamW 默认组生成一份文本、绘制两张汇总图并导出 ZIP。任一步报错，后续命令会停止。如果 `results01.zip` 已存在，先把最后一条命令的输出文件名改为新文件名。
+
+```bash
+(
+  set -e
+
+  for run in adamw-default adamw-other muon-default muon-other sgdm-default sgdm-other; do
+    python plot.py --run-dir="runs/$run"
+  done
+
+  python sample.py --checkpoint=runs/adamw-default/last.pt --tokens=400
+  python plot.py --runs-dir=runs
+  python export_results.py --runs-dir=runs --output=results01.zip
+)
+```
+
+分步执行或整段执行任选一种。导出成功后按下面的清单验收和备份。
+
 - [ ] 打开两张汇总图，确认每张都包含六组验证损失曲线。横轴分别是训练 token 数和训练时间。
 - [ ] 打开 ZIP，确认包含代码、配置、六组实验记录、12 张单组图、2 张汇总图和至少一份 `samples.txt`。把 ZIP 复制到自己的存储，模型检查点另行备份。
 - [ ] 如果下午跑不完，备份已完成的实验目录和检查点，记下剩余组别。下次只跑未完成的组；汇总时把六组齐全的正式结果放回同一个 `runs/` 目录。
